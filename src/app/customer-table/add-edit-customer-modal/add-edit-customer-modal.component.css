@@ -1,0 +1,35 @@
+/* Center title */
+.modal-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+ 
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .form-field {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  
+  .cancel-button {
+    margin-right: auto; 
+  }
+  
+  .submit-button {
+    margin-left: 16px; 
+  }
+  

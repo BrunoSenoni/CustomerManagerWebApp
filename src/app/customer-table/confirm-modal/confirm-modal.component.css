@@ -1,0 +1,10 @@
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .modal-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }

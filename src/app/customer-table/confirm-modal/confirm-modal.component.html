@@ -1,0 +1,10 @@
+<h1 mat-dialog-title class="modal-title">Confirm Deletion</h1>
+
+<div mat-dialog-content>
+  <p>Are you sure you want to delete this customer?</p>
+</div>
+
+<div mat-dialog-actions class="modal-actions">
+  <button mat-button class="cancel-button" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button class="confirm-button" color="warn" (click)="onConfirm()">Confirm</button>
+</div>

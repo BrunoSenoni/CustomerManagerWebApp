@@ -1,0 +1,51 @@
+<h1 mat-dialog-title class="modal-title">{{ data.customer ? 'Edit' : 'Add' }} Customer</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="customerForm" class="modal-form">
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName">
+      <mat-error *ngIf="customerForm.get('firstName')?.invalid && customerForm.get('firstName')?.touched">
+        <ng-container *ngIf="customerForm.get('firstName')?.hasError('required')">
+          First Name is required
+        </ng-container>
+        <ng-container *ngIf="customerForm.get('lastName')?.hasError('maxlength')">
+          First Name cannot exceed 20 characters
+        </ng-container>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName">
+      <mat-error *ngIf="customerForm.get('lastName')?.invalid && customerForm.get('lastName')?.touched">
+        <ng-container *ngIf="customerForm.get('lastName')?.hasError('required')">
+          Last Name is required
+        </ng-container>
+        <ng-container *ngIf="customerForm.get('lastName')?.hasError('maxlength')">
+          Last Name cannot exceed 20 characters
+        </ng-container>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+      <mat-error *ngIf="customerForm.get('email')?.invalid && customerForm.get('email')?.touched">
+        <ng-container *ngIf="customerForm.get('email')?.hasError('email')">
+          Invalid email format
+        </ng-container>
+        <ng-container *ngIf="customerForm.get('email')?.hasError('required')">
+          Email is required
+        </ng-container>
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions class="modal-actions">
+  <button mat-button class="cancel-button" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button class="submit-button" color="primary" 
+          [disabled]="!customerForm.valid || customerForm.pristine" 
+          (click)="onSubmit()">Submit</button>
+</div>
