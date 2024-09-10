@@ -21,3 +21,7 @@
     display: flex;
     justify-content: center;
   }
+
+  .highlight-row {
+    background-color: #d3d3d3; 
+  }

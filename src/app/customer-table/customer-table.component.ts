@@ -27,6 +27,7 @@ export class CustomerTableComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    sessionStorage.removeItem('lastSelectedCustomer');
     this.loadCustomers();
   }
 
@@ -53,6 +54,7 @@ export class CustomerTableComponent implements OnInit {
   }
 
   openEditModal(customer: Customer) {
+    sessionStorage.setItem('lastSelectedCustomer', JSON.stringify(customer));
     const dialogRef = this.dialog.open(AddEditCustomerModalComponent, {
       width: '400px',
       data: { customer }
@@ -126,5 +128,14 @@ export class CustomerTableComponent implements OnInit {
       duration: 5000,
       panelClass: ['error-snackbar']
     });
+  }
+
+  isLastSelected(customer: Customer): boolean {
+    const lastSelectedCustomer = sessionStorage.getItem('lastSelectedCustomer');
+    if (lastSelectedCustomer) {
+      const storedCustomer = JSON.parse(lastSelectedCustomer) as Customer;
+      return storedCustomer.id === customer.id;
+    }
+    return false;
   }
 }
