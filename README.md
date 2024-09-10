@@ -1,6 +1,6 @@
 # CustomerManagerWebApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+This is a simple customer management CRUD application built with Angular 17.3.8, which consumes a .NET Core 8 backend service. The app uses Angular Material for UI components, `angular/forms` for form handling, and the Angular HttpClient module for making HTTP requests to the backend API.
 
 ## Development server
 
@@ -21,6 +21,13 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Technologies Used
+
+- **Angular 17.3.8**: Front-end framework for building the user interface.
+- **Angular Material**: Used for designing responsive and visually appealing UI components.
+- **Angular Forms**: Utilized for form handling and validation.
+- **HttpClient**: Angular's built-in module for making HTTP requests to the .NET Core backend.
 
 ## Further help
 
