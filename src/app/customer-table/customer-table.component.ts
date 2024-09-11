@@ -1,15 +1,30 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';  // Add this import
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { AddEditCustomerModalComponent } from './add-edit-customer-modal/add-edit-customer-modal.component';
 import { Customer, CustomerService } from '../shared/services/customer.service';
+import { AddEditCustomerModalComponent } from './add-edit-customer-modal/add-edit-customer-modal.component';
 import { ConfirmDialogComponent } from './confirm-modal/confirm-modal.component';
 
 @Component({
   selector: 'app-customer-table',
+  standalone: true,
+  imports: [
+    CommonModule, 
+    MatPaginatorModule, 
+    MatTableModule, 
+    MatSortModule, 
+    MatDialogModule, 
+    MatIconModule, 
+    MatButtonModule,  
+    MatFormFieldModule
+  ],
   templateUrl: './customer-table.component.html',
   styleUrls: ['./customer-table.component.css']
 })

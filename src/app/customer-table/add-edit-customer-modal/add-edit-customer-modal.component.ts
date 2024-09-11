@@ -1,11 +1,32 @@
 import { Component, Inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar'; // Import MatSnackBar for feedback messages
+import { MatSnackBar } from '@angular/material/snack-bar'; 
 import { Customer, CustomerService } from '../../shared/services/customer.service';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-add-edit-customer-modal',
+  standalone: true,
+  imports: [
+    CommonModule, 
+    MatPaginatorModule, 
+    MatTableModule, 
+    MatSortModule, 
+    MatDialogModule, 
+    MatIconModule, 
+    MatFormFieldModule, 
+    MatInputModule,
+    MatButtonModule, 
+    ReactiveFormsModule
+  ],
   templateUrl: './add-edit-customer-modal.component.html',
   styleUrl: './add-edit-customer-modal.component.css'
 })
