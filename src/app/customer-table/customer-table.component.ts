@@ -29,7 +29,7 @@ import { ConfirmDialogComponent } from './confirm-modal/confirm-modal.component'
   styleUrls: ['./customer-table.component.css']
 })
 export class CustomerTableComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'actions'];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email','createdDate','lastUpdatedDate', 'actions'];
   dataSource = new MatTableDataSource<Customer>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
